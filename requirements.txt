@@ -1,0 +1,6 @@
+azure-identity>=1.15.0
+azure-mgmt-compute>=30.0.0
+azure-mgmt-network>=25.1.0
+azure-mgmt-resource>=23.0.0
+click>=8.1.7
+rich>=13.7.0

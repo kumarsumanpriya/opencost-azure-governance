@@ -1,0 +1,28 @@
+# OpenCost Helm Values for Enterprise Azure AKS
+opencost:
+  exporter:
+    defaultClusterId: "aks-enterprise-landingzone-prod"
+    azure:
+      subscriptionId: "00000000-0000-0000-0000-000000000000"
+      pricingModel: "EnterpriseAgreement"
+    extraEnv:
+      - name: CLOUD_PROVIDER
+        value: "azure"
+      - name: LOG_LEVEL
+        value: "info"
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "256Mi"
+      limits:
+        cpu: "500m"
+        memory: "1Gi"
+
+  ui:
+    enabled: true
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "cilium"
+      hosts:
+        - opencost.internal.enterprise.com
